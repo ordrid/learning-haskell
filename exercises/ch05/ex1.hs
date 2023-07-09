@@ -6,7 +6,6 @@ module Ex1 where
 sumSquares :: Int
 sumSquares = sum [x ^ 2 | x <- [1 .. 100]]
 
--- NOTE: Using the formula for summing the sum of the squares of positive
--- integers 1 to n:
+--  Using the formula for the sum of the squares of positive integers 1 to n:
 sumSqures' :: Int -> Int
 sumSqures' n = div (n * (n + 1) * (2 * n + 1)) 6
