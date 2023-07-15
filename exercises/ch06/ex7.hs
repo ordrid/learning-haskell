@@ -10,9 +10,8 @@ module Ex7 where
 -- or irosrt, but should be defined using explicit recursion.
 
 merge :: Ord a => [a] -> [a] -> [a]
-merge [] [] = []
-merge (x : []) [] = [x]
-merge [] (x : []) = [x]
+merge [] ys = ys
+merge xs [] = xs
 merge (x : xs) (y : ys)
-  | x < y = [x] ++ [y] ++ merge xs ys
-  | otherwise = [y] ++ [x] ++ merge xs ys
+  | x <= y = x : merge xs (y : ys)
+  | otherwise = y : merge (x : xs) ys
